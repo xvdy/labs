@@ -80,7 +80,7 @@ DESC_VIDEO_LOW_32       equ   (0x8000 << 16) + DESC_LIMIT_VIDEO_0_15
 
 
 ;*************************** segment selector *********************************;
-RPL0 equ 00b ; 定义常量，特权等级
+RPL0 equ 00b
 RPL1 equ 01b
 RPL2 equ 10b
 RPL3 equ 11b
@@ -91,3 +91,12 @@ TI_LDT equ 100b
 SELECTOR_CODE    equ (0x0001 << 3) + TI_GDT + RPL0
 SELECTOR_DATA    equ (0x0002 << 3) + TI_GDT + RPL0
 SELECTOR_VIDEO   equ (0x0003 << 3) + TI_GDT + RPL0
+
+;********************************** page **************************************;
+PAGE_DIR_TABLE_POS  equ  0x100000  ; 1MB
+
+PG_P      equ  1
+PG_RW_R  equ  0 << 1
+PG_RW_W  equ  1 << 1
+PG_US_S  equ  0 << 2
+PG_US_U  equ  1 << 2
